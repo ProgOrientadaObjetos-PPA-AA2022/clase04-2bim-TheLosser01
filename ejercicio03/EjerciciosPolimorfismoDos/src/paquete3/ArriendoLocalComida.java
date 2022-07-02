@@ -6,6 +6,7 @@
 package paquete3;
 
 import paquete2.Arriendo;
+import paquete2.Propietario;
 /**
  *
  * @author reroes
@@ -15,16 +16,20 @@ public class ArriendoLocalComida extends Arriendo {
     private double valorAgua;
     private double iva;
     
-    public ArriendoLocalComida(String nombre, double cuotaB){
-        super(nombre, cuotaB);
+    public ArriendoLocalComida(Propietario arrendatario, double cuotaB){
+        super(arrendatario, cuotaB);
     }
     
-    public ArriendoLocalComida(String nombre, double cuotaB, double vl, 
+    public ArriendoLocalComida(Propietario arrendatario, double cuotaB, double vl, 
             double va, double iv){
-        super(nombre, cuotaB);
+        super(arrendatario, cuotaB);
         valorAgua = va;
         valorLuz = vl;
         iva = iv;
+    }
+    
+    public void establecerNombreArrendatario(Propietario n){
+        arrendatario = n;
     }
     
     public void establecerValorLuz(double x){
@@ -38,6 +43,7 @@ public class ArriendoLocalComida extends Arriendo {
     public void establecerIva(double x){
         iva = x;
     }
+    
     
     @Override
     public void establecerArriendoMensual(){
@@ -67,7 +73,7 @@ public class ArriendoLocalComida extends Arriendo {
                 + "Valor agua: %.2f\n"
                 + "Porcentaje iva: %.2f\n"
                 + "Arriendo Total: %.2f\n", 
-                obtenerNombreArrendatario(),
+                obtenerArrendatario(),
                 obtenerCuotaBase(),
                 obtenerValorLuz(),
                 obtenerValorAgua(),

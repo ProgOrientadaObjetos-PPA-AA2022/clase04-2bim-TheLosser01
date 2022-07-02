@@ -7,6 +7,7 @@ package paquete4;
 
 import java.util.ArrayList;
 import paquete2.Arriendo;
+import paquete2.Propietario;
 import paquete3.ArriendoLocalComercial;
 import paquete3.ArriendoLocalComida;
 import paquete3.ArriendoLocalSesiones;
@@ -16,18 +17,21 @@ public class Ejecutor {
         
         ArrayList<Arriendo> listaArriendos = new ArrayList<>();
         
+        Propietario prop1 = new Propietario("Christian","Shepherd", 25);
         ArriendoLocalComida arriendoComida = new ArriendoLocalComida(
-                "Christian Shepherd", 300);
+                prop1, 300);
         arriendoComida.establecerIva(10); // en porcentaje
         arriendoComida.establecerValorAgua(20.2); // en $
         arriendoComida.establecerValorLuz(40.2); // en $
         
+        Propietario prop2 = new Propietario("Andrew","Schroeder", 26);
         ArriendoLocalComercial arriendoComercial = new ArriendoLocalComercial(
-                "Andrew Schroeder", 400);
+                prop2, 400);
         arriendoComercial.establecerValorAdicionalFijo(100); // en $
         
+        Propietario prop3 = new Propietario("Angela","Watson", 26);
         ArriendoLocalSesiones arriendoSesiones = new ArriendoLocalSesiones(
-                "Angela Watson", 350);
+                prop3, 350);
         arriendoSesiones.establecerValorSillas(10); // en $
         arriendoSesiones.establecerValorAmplificacion(20); // en $
         
